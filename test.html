@@ -11,6 +11,6 @@ XSS Param tester:<br/>
   }
   
   document.querySelector('#submit').addEventListener('click', () => {
-    window.location.href = '/?xss=' + document.querySelector('#input').value;
+    window.location.href = '/test.html?xss=' + document.querySelector('#input').value;
   });
 </script>
