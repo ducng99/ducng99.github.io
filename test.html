@@ -1,4 +1,6 @@
 XSS Param tester:
+<input type="text" width="500" id="input"/>
+<button id="submit">Test</button>
 
 <div id="container"></div>
 
@@ -7,4 +9,8 @@ XSS Param tester:
   if (params.get('xss')) {
     document.getElementById('container').innerHTML = params.get('xss');
   }
+  
+  document.querySelector('#submit').addEventListener('click', () => {
+    window.location.href = '/?xss=' + document.querySelector('#input').value;
+  });
 </script>
