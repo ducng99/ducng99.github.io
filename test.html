@@ -1,12 +1,12 @@
-XSS Param tester:
-<input type="text" width="500" id="input"/>
+XSS Param tester:<br/>
+<input type="text" size="200" id="input"/><br/>
 <button id="submit">Test</button>
 
 <div id="container"></div>
 
 <script>
   let params = new URLSearchParams(window.location.search);
-  if (params.get('xss')) {
+  if (params.has('xss')) {
     document.getElementById('container').innerHTML = params.get('xss');
   }
   
